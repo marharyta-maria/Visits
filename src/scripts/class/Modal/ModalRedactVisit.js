@@ -66,15 +66,15 @@ class ModalRedactVisit extends Modal {
         this.form.render(this.modalBody)
         this.fillInputs()
 
-        this.modalBody.querySelectorAll("._visit-input").forEach(input => {
-            input.addEventListener("input", ({target}) => this.visitObj[target.name] = target.value)
-        })
+        // this.modalBody.querySelectorAll("._visit-input").forEach(input => {
+        //     input.addEventListener("input", ({target}) => this.visitObj[target.name] = target.value)
+        // })
 
         this.select.addEventListener("change", ({target}) => {
-            // const inputCollection = this.modalBody.querySelectorAll("._visit-input");
-            // inputCollection.forEach(input => {
-            //     this.visitObj[input.name] = input.value
-            // })
+            const inputCollection = this.modalBody.querySelectorAll("._visit-input");
+            inputCollection.forEach(input => {
+                this.visitObj[input.name] = input.value
+            })
             this.modalBody.querySelector("form").remove()
             this.form = selectFormByDoctor(target.value)
             this.form.render(this.modalBody)
