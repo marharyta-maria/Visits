@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card-step-project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script type="module" src="../scripts/home-page.js"></script>
+  <link rel="stylesheet" href="../style/additionalStyles.css">
+</head>
+
+<body class="bg-light">
+  <header>
+    <nav class="navbar bg-success" style="--bs-bg-opacity: .75;">
+      <div class="container-xl">
+        <a class="navbar-brand" href="#">
+          <svg style="fill: white" width="50px"  class="rounded mx-auto d-block" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill=""
+            x="0px" y="0px" viewBox="0 0 100.75 100.75" style="enable-background:new 0 0 100.75 100.75;"
+            xml:space="preserve">
+            <g>
+              <path
+                d="M50,60.8c-17.008,0-30.845,13.837-30.845,30.845c0,0.829,0.671,1.5,1.5,1.5h58.69c0.829,0,1.5-0.671,1.5-1.5
+		            C80.845,74.637,67.008,60.8,50,60.8z M22.195,90.145C22.977,75.486,35.15,63.8,50,63.8s27.023,11.686,27.805,26.345H22.195z" />
+              <path d="M49.491,58.057c9.838,0,17.843-8.007,17.843-17.85c0-3.477-1.003-6.831-2.89-9.726V8.355c0-0.829-0.671-1.5-1.5-1.5H36.04
+		            c-0.829,0-1.5,0.671-1.5,1.5v22.116c-1.892,2.901-2.895,6.262-2.895,9.736C31.644,50.05,39.65,58.057,49.491,58.057z M37.539,9.856
+		            h23.904v19.947H37.539V9.856z M36.629,32.802h25.729c1.295,2.245,1.976,4.784,1.976,7.405c-0.001,8.189-6.659,14.85-14.843,14.85
+		            c-8.186,0-14.846-6.662-14.846-14.85C34.645,37.59,35.331,35.05,36.629,32.802z" />
+              <path d="M54.718,18.495h-3.727v-3.733c0-0.829-0.671-1.5-1.5-1.5s-1.5,0.671-1.5,1.5v3.733h-3.728c-0.829,0-1.5,0.671-1.5,1.5
+		              c0,0.829,0.671,1.5,1.5,1.5h3.728v3.728c0,0.829,0.671,1.5,1.5,1.5s1.5-0.671,1.5-1.5v-3.728h3.727c0.829,0,1.5-0.671,1.5-1.5
+		            C56.218,19.166,55.546,18.495,54.718,18.495z" />
+            </g>
+          </svg>
+          
+        </a>
+
+        <button type="button" class="btn btn-light _create-visit-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Create visit
+        </button>
+      </div>
+    </nav>
+  </header>
+
+<main> 
+  <section class="filter">
+    <div class="filter__input-wrap p-3">
+      <div class="mb-3">
+        <label class="form-label">Filter by doctor:</label>
+        <select class="form-select _doctor-filter">
+          <option value="" selected>All</option>
+          <option value="therapist">Therapist</option>
+          <option value="dentist">Dentist</option>
+          <option value="cardiologist">Cardiologist</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Filter by priority:</label>
+        <select class="form-select _priority-filter">
+          <option value="" selected>All</option>
+          <option value="regular">Regular</option>
+          <option value="priority">Priority</option>
+          <option value="urgant">Urgant</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Search in visit:</label>
+        <input type="text" class="form-control _text-filter">
+      </div>
+    
+    </div>
+  </section>
+
+  <section class="visits container p-4">
+      <div class="alert alert-success mt-3 visually-hidden _no-visits-added" role="alert">
+      <p class="text-center lh-1 m-0">No items have been added.</p>
+      </div>
+    <div class="_visits-wrap mt-5">
+      
+    </div>
+  </section>
+</main>
+<!-- Modal -->
+<section class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+    </div>
+    <div class="modal-footer">
+       
+    </div>
+  </div>
+</section>
+
+</body>
+
+</html>

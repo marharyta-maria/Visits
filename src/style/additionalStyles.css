@@ -1,0 +1,66 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "filter visits visits visits";
+  min-height: calc(100vh - 76px);
+  gap: 0.25rem;
+}
+
+.filter{
+  grid-area: filter;
+  background-color: #e9ecef;
+  min-width: 200px;
+  border-right: 1px solid #198754;
+}
+
+.visits{
+  grid-area: visits;
+}
+
+._card-redact-btn {
+  border: none;
+  background: none;
+}
+
+._card-redact-btn:hover svg {
+  fill: black;
+}
+
+._visits-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: auto;
+  gap: 2rem;
+}
+
+@media (max-width : 576px) {
+  main {
+    display: block;
+  }
+
+  .filter {
+    border-right: none;
+    border-bottom: 1px solid #198754;
+
+  }
+}
+
+@media (max-width : 992px) {
+  ._visits-wrap{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter{
+    position: relative;
+    min-height: 80px;
+  }
+
+}
+
+@media (max-width : 678px) {
+  ._visits-wrap{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+
+}
