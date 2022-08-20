@@ -5,9 +5,6 @@ document.querySelector("._login-btn").addEventListener("click", (event) => {
 })
 
 
-    // (new ModalError("name", "message")).render()
-    // const myModal = new bootstrap.Modal('#staticBackdrop')
-    // myModal.show()
 
 
 

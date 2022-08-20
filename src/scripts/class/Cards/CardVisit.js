@@ -37,7 +37,7 @@ class CardVisit {
 
     render(container){
         this.addAtributesToElements()
-        this.cardHeader.innerHTML = `<h5 class="card-title me-1">${this.visitObj.doctor[0].toUpperCase() +
+        this.cardHeader.innerHTML = `<h5 class="card-title me-1" id = "patientDoctor">${this.visitObj.doctor[0].toUpperCase() +
             this.visitObj.doctor.slice(1)}</h5>`
 
         this.buttonWrap.append(this.redactButon, this.closeButton)

@@ -7,6 +7,7 @@ class ModalError extends Modal {
     }
     render(){
         super.render()
+        this.modalFooter.hidden = true
         this.modalMainContainer.classList.add("bg-danger", "bg-opacity-25")
         this.modalBody.innerHTML = `
         <span>${this.message}</span>`

@@ -5,7 +5,6 @@ import Modal from "./Modal.js";
 class ModalLogin extends Modal {
     constructor(title){
         super(title);
-        this.loginBtn = document.createElement("button")
         this.emailInput = null
         this.passwordInput = null
     }
@@ -26,22 +25,19 @@ class ModalLogin extends Modal {
         this.emailInput = document.querySelector("#email")
         this.passwordInput = document.querySelector("#password")
 
-        this.modalFooter.append(this.loginBtn)
-        this.loginBtn.innerText = `Login`
-        this.loginBtn.classList.add("btn", "btn-success")
-        this.loginBtn.dataset.bsDismiss = "modal"
-        this.loginBtn.type = "button"
+        this.submitBtn.innerText = `Log in`
+        this.closeBtn.innerText = `Cancel`
         
-        this.loginBtn.addEventListener("click", async ({target}) => {
+        const sumbitLogin = async ({target}) => {
             const token = await tokenRequest(this.emailInput.value, this.passwordInput.value)
             if (token !== undefined) {
                 localStorage.setItem("token", token)
-                target.dataset.bsDismiss="modal"
-    
                 location.assign("./src/pages/home-page.html")
             }
-        })
-    }
+            target.removeEventListener("click", sumbitLogin)
+        }
+        this.submitBtn.addEventListener("click", sumbitLogin)
+        }
 }
 
 export default ModalLogin

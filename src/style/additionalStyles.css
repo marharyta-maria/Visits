@@ -17,6 +17,10 @@ main {
   grid-area: visits;
 }
 
+._logout-btn, ._logout-btn:hover, ._logout-btn:focus {
+  color: #dc3545;
+}
+
 ._card-redact-btn {
   border: none;
   background: none;
@@ -61,6 +65,4 @@ main {
   ._visits-wrap{
     grid-template-columns: repeat(1, 1fr);
   }
-
-
 }

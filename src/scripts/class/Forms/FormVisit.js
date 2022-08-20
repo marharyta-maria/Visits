@@ -45,7 +45,7 @@ class FormVisit {
                     <select name="priority" id="priority" class="_visit-input form-select">
                         <option value="regular" selected>Regular</option>
                         <option value="priority">Priority</option>
-                        <option value="urgant">Urgant</option>
+                        <option value="urgent">Urgent</option>
                     </select>
                 </div> `
 

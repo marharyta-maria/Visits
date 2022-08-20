@@ -11,7 +11,6 @@ const searchVisits = async () => {
         const textBoolean = (el.purpose.includes(textSearch) || el.description.includes(textSearch))
         return el.doctor.includes(doctor) && el.priority.includes(priority) && textBoolean
     })
-    console.log(filteredVisits);
     return filteredVisits;
 }
 

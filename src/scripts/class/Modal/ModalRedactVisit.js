@@ -13,26 +13,13 @@ class ModalRedactVisit extends Modal {
 
         this.form = null
         this.select = document.createElement("select")
-        this.submitBtn = document.createElement("button");
-        this.closeBtn = document.createElement("button")
     }
 
     addAtributes(){
-        this.submitBtn.type = "button"
-        this.closeBtn.type = "button"
-        
-        this.submitBtn.classList.add("visit-form__button", "btn", "btn-success")
-        this.closeBtn.classList.add("visit-form__button", "btn", "btn-light")
-        this.closeBtn.dataset.bsDismiss = "modal"
-
         this.submitBtn.innerText = "Submit"
-        this.submitBtn.dataset.bsDismiss = "modal"
         this.closeBtn.innerText = "Cancel"
 
-
         this.select.classList.add("form-select")
-        this.select.style.maxWidth = "240px"
-        this.select.style.margin = "0 auto"
         this.select.innerHTML = `
         <option value="therapist">Therapist</option>
         <option value="dentist">Dentist</option>
@@ -57,10 +44,9 @@ class ModalRedactVisit extends Modal {
     }
 
     render(){
-        super.render()
         this.addAtributes()
+        super.render()
         this.modalBody.append(this.select)
-        this.modalFooter.append(this.submitBtn, this.closeBtn)
         
         this.form = selectFormByDoctor(this.visitObj.doctor)
         this.form.render(this.modalBody)
@@ -82,7 +68,7 @@ class ModalRedactVisit extends Modal {
             this.fillInputs()
         })
 
-        this.submitBtn.addEventListener("click", async ({target}) => {
+        const submitEditing = async ({target}) => {
             const body = this.form.collectData()
             body.id = this.visitObj.id
 
@@ -93,11 +79,14 @@ class ModalRedactVisit extends Modal {
                 const myModal = new bootstrap.Modal('#staticBackdrop')
                 myModal.show()
             }
-            
+
             console.log(this.visitObj);
             this.reRender()
             filterCards()
-        })
+
+            target.removeEventListener("click", submitEditing)
+        } 
+        this.submitBtn.addEventListener("click", submitEditing)
     }
     
 }

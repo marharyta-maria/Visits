@@ -1,5 +1,5 @@
 const formCardBody = function ({id, name, priority, doctor, purpose, description, age, bmi, cardioDesease, pressure, lastVisit}) {
-    let bodyHtml = `<p class="card-text">${name}</p>
+    let bodyHtml = `<p class="card-text" id = "patientName">${name}</p>
          <p class="card-text">Priority: ${priority}</p>
 `
 
